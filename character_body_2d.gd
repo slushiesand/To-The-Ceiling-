@@ -5,6 +5,7 @@ var is_coyote = false
 #obviously, you're a ceiling. but you can be a coyote as a treat. same kingdom anyway.
 var last_floor = false
 var jumping = false
+var double_jump = false
 
 const SPEED = 200
 const JUMP_VELOCITY = -700.0
@@ -19,12 +20,22 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	else:
 		jumping = false
+		double_jump = false
 	
 	#https://kidscancode.org/godot_recipes/4.x/2d/coyote_time/index.html
-	
-	if Input.is_action_just_pressed("up") and (is_on_floor() or is_coyote):
-		velocity.y = JUMP_VELOCITY
-		jumping = true
+	if Input.is_action_just_pressed("up"):
+		
+		if (is_on_floor() or is_coyote):
+			velocity.y = JUMP_VELOCITY
+			$Buble.play()
+			jumping = true
+			double_jump = true
+		elif double_jump == true:
+			velocity.y = -600.0
+			$Buble.play()
+			double_jump = false
+		else:
+			pass
 	
 	if not is_on_floor() and not jumping:
 		is_coyote = true
