@@ -14,6 +14,8 @@
 [ext_resource type="AudioStream" uid="uid://cr7ed0dcr2jtr" path="res://audio/congrats.mp3" id="8_asea4"]
 [ext_resource type="Texture2D" uid="uid://bgcn5rgbtoip3" path="res://art/cruise.png" id="9_coey8"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l7tok"]
+
 [sub_resource type="Gradient" id="Gradient_a2nbg"]
 colors = PackedColorArray(0.19607843, 0.35686275, 0.49019608, 1, 1, 1, 1, 0)
 
@@ -90,8 +92,6 @@ colors = PackedColorArray(0.19432276, 0.35635412, 0.48871523, 1, 1, 1, 1, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_coey8"]
 gradient = SubResource("Gradient_asea4")
 
-[sub_resource type="Theme" id="Theme_18jin"]
-
 [node name="Node" type="Node"]
 
 [node name="Sky" type="ColorRect" parent="."]
@@ -102,9 +102,10 @@ offset_bottom = 638.0
 color = Color(0.5370432, 0.761933, 0.96819085, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sky"]
-position = Vector2(572.768, 630.9583)
+material = SubResource("CanvasItemMaterial_l7tok")
+position = Vector2(572.768, 514.5913)
 rotation = -1.5707964
-scale = Vector2(0.4011064, 1142.964)
+scale = Vector2(1.3102235, 1142.964)
 texture = SubResource("GradientTexture1D_dtnqn")
 
 [node name="platforms" type="TileMapLayer" parent="."]
@@ -113,6 +114,13 @@ texture_filter = 1
 tile_map_data = PackedByteArray("AAAzABoAAAADAAAAAAAhAB0AAAACAAMAABAhAB4AAAACAAQAABAiAB4AAAABAAQAABAjAB4AAAAAAAQAABAnABkAAAAAAAAAAAApABkAAAACAAMAAAAmABoAAAAAAAAAAAAmABsAAAAAAAEAAAAnABoAAAABAAAAAAAnABsAAAABAAEAAAAoABoAAAACAAAAAAAoABsAAAACAAEAAAAgABgAAAAAAAMAAAAgABkAAAAAAAQAAAAhABgAAAABAAMAAAAhABkAAAABAAQAAAAiABgAAAACAAMAAAAiABkAAAACAAQAAAAXABYAAAADAAAAABAXABcAAAADAAEAABAYABYAAAACAAAAABAYABcAAAACAAEAABAZABYAAAABAAAAABAZABcAAAABAAEAABASABIAAAACAAMAABASABMAAAACAAQAABATABIAAAABAAMAABATABMAAAABAAQAABAUABIAAAAAAAMAABAUABMAAAAAAAQAABAbAA0AAAAAAAAAAAAbAA4AAAAAAAEAAAAcAA0AAAABAAAAAAAcAA4AAAABAAEAAAAdAA0AAAACAAAAAAAdAA4AAAACAAEAAAAeAAUAAAAAAAQAAAAfAAUAAAABAAQAAAAgAAQAAAACAAMAAAAgAAUAAAACAAQAAAAhAAwAAAAAAAQAAAAiAAwAAAABAAQAAAAjAAsAAAACAAMAAAAjAAwAAAACAAQAAAAkAAsAAAACAAMAAAAmAAcAAAAAAAMAABASAOH/AAADAAAAABASAOL/AAADAAEAABATAOH/AAACAAAAABATAOL/AAACAAEAABAUAOH/AAABAAAAABAUAOL/AAABAAEAABAlAM7/AAAAAAMAAAAlAM//AAAAAAQAAAAmAM7/AAABAAMAAAAmAM//AAABAAQAAAAnAM7/AAACAAMAAAAnAM//AAACAAQAAAAUALb/AAACAAMAAAAhAKn/AAAAAAAAAAAhAKr/AAAAAAEAAAAhAKv/AAAAAAIAAAAiAKn/AAABAAAAAAAiAKr/AAABAAEAAAAiAKv/AAABAAIAAAAjAKn/AAACAAAAAAAjAKr/AAACAAEAAAAjAKv/AAACAAIAAAAkAKn/AAADAAAAAAAkAKr/AAADAAEAAAAkAKv/AAADAAIAAAAcANz/AAACAAMAABAcAN3/AAACAAQAABAdANz/AAABAAMAABAdAN3/AAABAAQAABAeANz/AAAAAAMAABAeAN3/AAAAAAQAABAmANj/AAAAAAMAAAAoANj/AAABAAMAABApANH/AAACAAQAABAqANH/AAABAAQAABArANH/AAAAAAQAABApAND/AAACAAMAABASAL7/AAAAAAMAAAASAL//AAAAAAQAAAATAL7/AAABAAMAAAATAL//AAABAAQAAAAUAL7/AAACAAMAAAAUAL//AAACAAQAAAASALn/AAACAAQAABATALn/AAABAAQAABAUALn/AAAAAAQAABASALP/AAAAAAQAAAATALP/AAABAAQAAAAUALP/AAACAAQAAAASALL/AAAAAAMAAAATALL/AAABAAMAAAAUALL/AAACAAMAAAAxANb/AAAAAAQAAAAyANb/AAABAAQAAAAzANX/AAACAAMAAAAzANb/AAACAAQAAAAVAK7/AAADAAAAABAVAK//AAADAAEAABAWAK7/AAACAAAAABAWAK//AAACAAEAABAXAK7/AAABAAAAABAXAK//AAABAAEAABAaAPv/AAACAAAAABAaAPz/AAACAAEAABAbAPv/AAABAAAAABAbAPz/AAABAAEAABAcAPv/AAAAAAAAABAcAPz/AAAAAAEAABAdAOf/AAABAAAAAAAdAOj/AAABAAEAAAAeAOf/AAACAAAAAAAeAOj/AAACAAEAAAAfAOf/AAADAAAAAAAfAOj/AAADAAEAAAAfAPT/AAAAAAMAAAAfAPX/AAAAAAQAAAAgAPT/AAABAAMAAAAgAPX/AAABAAQAAAAhAPT/AAACAAMAAAAhAPX/AAACAAQAAAAlAPL/AAAAAAMAAAAnAOj/AAAAAAQAAAAnAPL/AAACAAMAAAAoAOj/AAABAAQAAAApAOf/AAACAAMAAAApAOj/AAACAAQAAAAqAP7/AAACAAMAABAqAP//AAACAAQAABArAPD/AAAAAAMAAAArAPH/AAAAAAQAAAArAP7/AAABAAMAABArAP//AAABAAQAABAsAPD/AAABAAMAAAAsAPH/AAABAAQAAAAsAP7/AAAAAAMAABAsAP//AAAAAAQAABAtAPD/AAACAAMAAAAtAPH/AAACAAQAAAAxAOf/AAAAAAMAAAAxAOj/AAAAAAQAAAAyAOf/AAABAAMAAAAyAOj/AAABAAQAAAAzAOf/AAACAAMAAAAzAOj/AAACAAQAAAASAOf/AAAAAAMAAAAnANn/AAACAAQAABAoANn/AAABAAQAABApANn/AAAAAAQAABAnAAMAAAAAAAAAAAAnAAQAAAAAAAEAAAAnAAUAAAAAAAIAAAAoAAMAAAABAAAAAAAoAAQAAAABAAEAAAAoAAUAAAABAAIAAAApAAMAAAACAAAAAAApAAQAAAACAAEAAAApAAUAAAACAAIAAAAqAAMAAAADAAAAAAAqAAQAAAADAAEAAAAqAAUAAAADAAIAAAAXABgAAAADAAIAABAYABgAAAACAAIAABAZABgAAAABAAIAABAaABYAAAAAAAAAABAaABcAAAAAAAEAABAaABgAAAAAAAIAABAmABwAAAAAAAIAAAAnABwAAAABAAIAAAAoABwAAAACAAIAAAApABoAAAADAAAAAAApABsAAAADAAEAAAApABwAAAADAAIAAAAbAA8AAAAAAAIAAAAcAA8AAAABAAIAAAAdAA8AAAACAAIAAAAeAA8AAAADAAIAAAAeAA4AAAADAAEAAAAeAA0AAAADAAAAAAAgAM7/AAADAAIAAFAgAM3/AAACAAIAAFAgAMz/AAABAAIAAFAgAMv/AAAAAAIAAFAhAM7/AAADAAEAAFAhAM3/AAACAAEAAFAhAMz/AAABAAEAAFAhAMv/AAAAAAEAAFAiAM7/AAADAAAAAFAiAM3/AAACAAAAAFAiAMz/AAABAAAAAFAiAMv/AAAAAAAAAFAdAMv/AAAAAAAAAGAfAMv/AAAAAAIAAGAZAPv/AAADAAAAABAZAPz/AAADAAEAABAZAP3/AAADAAIAABAaAP3/AAACAAIAABAbAP3/AAABAAIAABAcAP3/AAAAAAIAABAbAMn/AAACAAAAAGAdAMj/AAAAAAMAAFAVALD/AAADAAIAABAWALD/AAACAAIAABAXALD/AAABAAIAABAYAK7/AAAAAAAAABAYAK//AAAAAAEAABAYALD/AAAAAAIAABAmALf/AAACAAMAAAAvALD/AAAAAAMAABAuALD/AAABAAMAABAtALD/AAACAAMAABAvALH/AAAAAAQAABAuALH/AAABAAQAABAtALH/AAACAAQAABAVAOH/AAAAAAAAABAVAOL/AAAAAAEAABAVAOP/AAAAAAIAABAUAOP/AAABAAIAABATAOP/AAACAAIAABASAOP/AAADAAIAABAlAPP/AAACAAMAAGAmAPX/AAAAAAQAAGAmAPT/AAABAAQAAGAmAPP/AAACAAQAAGApANj/AAAAAAMAABAnANj/AAACAAMAABAkALj/AAACAAQAAFAkALf/AAABAAQAAFAkALb/AAAAAAQAAFAlALj/AAAAAAQAAFAlALf/AAABAAMAAFAlALb/AAAAAAMAAFAlALr/AAACAAQAAFAlALn/AAABAAQAAFAjALv/AAACAAQAAFAjALr/AAABAAQAAFAjALn/AAAAAAQAAFAkALv/AAACAAMAAFAkALr/AAABAAMAAFAkALn/AAAAAAMAAFAwALP/AAAAAAQAABAvALP/AAABAAQAABAuALP/AAACAAQAABAjAMH/AAADAAIAAFAjAMD/AAACAAIAAFAjAL//AAABAAIAAFAjAL7/AAAAAAIAAFAkAMH/AAADAAEAAFAkAMD/AAACAAEAAFAkAL//AAABAAEAAFAkAL7/AAAAAAEAAFAlAMH/AAADAAAAAFAlAMD/AAACAAAAAFAlAL//AAABAAAAAFAlAL7/AAAAAAAAAFAYAMX/AAADAAAAAGAYAMb/AAACAAAAAGAZAMX/AAADAAEAAGAZAMb/AAACAAEAAGAYAMf/AAABAAAAAGAYAMj/AAAAAAAAAGAZAMf/AAABAAEAAGAZAMj/AAAAAAEAAGAaAMX/AAADAAIAAGAaAMb/AAACAAIAAGAaAMf/AAABAAIAAGAaAMj/AAAAAAIAAGAcAMr/AAADAAAAAGAwAP3/AAAAAAAAAAAwAP7/AAAAAAEAAAAwAP//AAAAAAIAAAAxAP3/AAABAAAAAAAxAP7/AAABAAEAAAAxAP//AAABAAIAAAAyAP3/AAACAAAAAAAyAP7/AAACAAEAAAAyAP//AAACAAIAAAAzAP3/AAADAAAAAAAzAP7/AAADAAEAAAAzAP//AAADAAIAAAAcAOf/AAAAAAAAAAAcAOj/AAAAAAEAAAAcAOn/AAAAAAIAAAAdAOn/AAABAAIAAAAeAOn/AAACAAIAAAAfAOn/AAADAAIAAAAXANP/AAAAAAAAABAWANP/AAABAAAAABAVANP/AAACAAAAABAUANP/AAADAAAAABAXANT/AAAAAAEAABAWANT/AAABAAEAABAVANT/AAACAAEAABAUANT/AAADAAEAABAXANX/AAABAAAAABAWANX/AAABAAIAABAVANX/AAADAAAAABAUANX/AAADAAIAABAYANX/AAAAAAAAABAYANb/AAAAAAEAABAXANb/AAABAAEAABAWANb/AAACAAEAABAVANb/AAADAAEAABAYANf/AAAAAAIAABAXANf/AAABAAIAABAWANf/AAACAAIAABAVANf/AAADAAIAABAgAN7/AAAAAAQAAAAhAN7/AAABAAQAAAAiAN3/AAACAAMAAAAiAN7/AAACAAQAAAAtAMX/AAAAAAMAAAAtAMb/AAAAAAQAAAAuAMX/AAABAAMAAAAuAMb/AAABAAQAAAAvAMX/AAACAAMAAAAvAMb/AAACAAQAAAAUAO//AAAAAAMAAEAxAPf/AAAAAAMAAAAxAPj/AAAAAAQAAAAyAPf/AAABAAMAAAAyAPj/AAABAAQAAAAzAPf/AAACAAMAAAAzAPj/AAACAAQAAAAVAAgAAAAAAAAAABAUAAgAAAABAAAAABATAAgAAAACAAAAABASAAgAAAADAAAAABAVAAkAAAAAAAEAABAUAAkAAAABAAEAABATAAkAAAACAAEAABASAAkAAAADAAEAABAVAAoAAAAAAAIAABAUAAoAAAABAAIAABATAAoAAAACAAIAABASAAoAAAADAAIAABAVAAEAAAAAAAMAABAUAAEAAAABAAMAABATAAEAAAACAAMAABAVAAIAAAAAAAQAABAUAAIAAAABAAQAABATAAIAAAACAAQAABAuABAAAAAAAAQAAAAvABAAAAABAAQAAAAwAA8AAAAAAAQAAAAwABAAAAACAAQAAAAvABEAAAAAAAMAAAAvABIAAAAAAAQAAAAwABEAAAABAAMAAAAwABIAAAABAAQAAAAxABEAAAACAAMAAAAxABIAAAACAAQAAAAwAA4AAAAAAAMAAAAxAA4AAAABAAMAAAAxAA8AAAABAAQAAAAyAA4AAAACAAMAAAAyAA8AAAACAAQAAAAVACAAAAAAAAAAABAUACAAAAABAAAAABATACAAAAACAAAAABASACAAAAADAAAAABAVACEAAAAAAAEAABAUACEAAAABAAEAABATACEAAAACAAEAABASACEAAAADAAEAABAVACIAAAAAAAIAABAUACIAAAABAAIAABATACIAAAACAAIAABASACIAAAADAAIAABAZAB4AAAAAAAAAABAYAB4AAAABAAAAABAXAB4AAAACAAAAABAWAB4AAAADAAAAABAZAB8AAAAAAAEAABAYAB8AAAABAAEAABAXAB8AAAACAAEAABAWAB8AAAADAAEAABAZACAAAAAAAAIAABAYACAAAAABAAIAABAXACAAAAACAAIAABAWACAAAAADAAIAABAzACEAAAADAAIAAAAyACEAAAACAAIAAAAwACEAAAAAAAIAAAAzAB4AAAAAAAMAABAlAPT/AAABAAMAAGAlAPX/AAAAAAMAAGAxAB4AAAAAAAQAAEAxAB0AAAABAAMAAEAxABwAAAAAAAMAAEAyAB4AAAACAAQAAEAyAB0AAAABAAQAAEAyABwAAAAAAAQAAEAwACAAAAACAAMAAEAwAB4AAAAAAAMAAEAxACAAAAACAAQAAEAxAB8AAAABAAQAAEAUAPH/AAAAAAQAAEAUAPD/AAABAAMAAEAVAPH/AAACAAQAAEAVAPD/AAABAAQAAEAVAO//AAAAAAQAAEATAPP/AAACAAMAAEATAPH/AAAAAAMAAEAUAPP/AAACAAQAAEAUAPL/AAABAAQAAEAnABMAAAACAAMAABAnABQAAAACAAQAABAoABMAAAABAAMAABAoABQAAAABAAQAABApABMAAAAAAAMAABApABQAAAAAAAQAABAqABMAAAACAAMAAAAoABkAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_asea4")
 script = ExtResource("2_l7tok")
+
+[node name="bubles" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(448, 528)
+texture = ExtResource("3_dtnqn")
+script = ExtResource("4_u40u4")
 
 [node name="background" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -196,20 +204,9 @@ offset_top = -1544.0
 offset_right = 656.0
 offset_bottom = -1489.0
 scale = Vector2(2, 2)
-theme = SubResource("Theme_18jin")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "U.S.S Untouchable"
 script = ExtResource("4_wsuqj")
-
-[node name="the_end" type="Label" parent="Win"]
-visible = false
-z_index = 4
-texture_filter = 1
-layout_mode = 0
-offset_left = 32.0
-offset_right = 94.0
-offset_bottom = 23.0
-text = "The End!!"
 
 [node name="Congrats" type="AudioStreamPlayer" parent="Win"]
 stream = ExtResource("8_asea4")
@@ -222,28 +219,8 @@ offset_left = -66.0
 offset_top = 33.0
 offset_right = 195.0
 offset_bottom = 56.0
-text = "Ceiling... has touched the ceiling!!"
+text = "Ceiling... has touched the ceiling..."
 script = ExtResource("2_l7tok")
-
-[node name="left" type="ColorRect" parent="Win"]
-visible = false
-z_index = 3
-layout_mode = 0
-offset_left = -356.0
-offset_top = -116.0
-offset_right = -120.0
-offset_bottom = 132.0
-color = Color(0, 0, 0, 1)
-
-[node name="right" type="ColorRect" parent="Win"]
-visible = false
-z_index = 3
-layout_mode = 0
-offset_left = 252.0
-offset_top = -120.0
-offset_right = 488.0
-offset_bottom = 120.0
-color = Color(0, 0, 0, 1)
 
 [node name="controls" type="Label" parent="."]
 texture_filter = 1
@@ -266,148 +243,5 @@ text = "Ceiling (the seal) sees a shadow above...
 Ceiling must arise from the depths... to touch the ceiling!!"
 script = ExtResource("6_ldpol")
 
-[node name="ignore this mess brah" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(752, 424)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles20" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(704, -1408)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles3" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(368, 264)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles4" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(472, 344)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles5" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(640, 160)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles6" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(784, 64)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles7" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(352, -88)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles8" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(560, -248)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles9" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(688, -104)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles10" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(328, -376)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles12" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(728, -448)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles13" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(752, -704)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles14" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(336, -848)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles15" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(456, -744)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles16" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(672, -968)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles17" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(784, -1064)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles18" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(424, -1200)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles19" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(488, -1288)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles11" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(400, -520)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
-[node name="bubles" type="Sprite2D" parent="."]
-z_index = 1
-texture_filter = 1
-position = Vector2(448, 528)
-texture = ExtResource("3_dtnqn")
-script = ExtResource("4_u40u4")
-
 [connection signal="body_entered" from="cruise/Sprite2D/Area2D" to="Win" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="cruise/Sprite2D/Area2D" to="Win/left" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="cruise/Sprite2D/Area2D" to="Win/right" method="_on_area_2d_body_entered"]
-[connection signal="child_entered_tree" from="cruise/Sprite2D/Area2D/CollisionShape2D" to="bubles" method="_on_collision_shape_2d_child_entered_tree"]
 [connection signal="timeout" from="Ceiling/Timer" to="Ceiling" method="_on_timer_timeout"]

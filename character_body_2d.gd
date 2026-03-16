@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody2D
 
-var coyote_frames = 2
+var coyote_frames = 3
 var is_coyote = false
 #obviously, you're a ceiling. but you can be a coyote as a treat. same kingdom anyway.
 var last_floor = false
